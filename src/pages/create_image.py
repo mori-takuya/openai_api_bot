@@ -8,7 +8,7 @@ openai.api_key = st.secrets.OpenAIAPI.openai_api_key
 response = openai.Image.create(
   prompt="a",
   n=1,
-  size='{}x{}'.format(str(50), str(50))
+  size='{}x{}'.format(str(256), str(256))
 )
 
 # 生成された画像のURLを取得
