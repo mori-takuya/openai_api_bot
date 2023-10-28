@@ -2,7 +2,7 @@ import openai
 import streamlit as st
 
 # OpenAI APIの設定
-openai.api_key = st.secrets.OpenAIAPI.openai_api_key
+openai.api_key = #st.secrets.OpenAIAPI.openai_api_key
 
 # 画像を生成するリクエストの送信
 def generate_image_with_dalle2(prompt):
