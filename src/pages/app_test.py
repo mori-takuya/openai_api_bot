@@ -5,11 +5,15 @@ import openai
 # Streamlit Community Cloudの「Secrets」からOpenAI API keyを取得
 openai.api_key = st.secrets.OpenAIAPI.openai_api_key
 
+system_prompt="""
+あなたはITエンジニアのための技術アシスタントです。
+IT技術以外のことは答えないでください。
+"""
+
 # st.session_stateを使いメッセージのやりとりを保存
 if "messages_test" not in st.session_state:
     st.session_state["messages_test"] = [
-        {"role": "system", "content": "こんにちは、私はシステムです。"},
-        {"role": "system", "content": "IT技術以外のことは話さないでください"},
+        {"role": "system", "content": system_prompt}
         ]
 
 # チャットボットとやりとりする関数
