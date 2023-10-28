@@ -9,9 +9,7 @@ openai.api_key = st.secrets.OpenAIAPI.openai_api_key
 if "messages_test" not in st.session_state:
     st.session_state["messages_test"] = [
         {"role": "system", "content": "こんにちは、私はシステムです。"},
-        {"role": "user", "content": "こんにちは、私はユーザーです。"},
-        {"role": "system", "content": "私はチャットボットです。"},
-        {"role": "user", "content": "どんなことについて話せますか？"},
+        {"role": "system", "content": "IT技術以外のことは話さないでください"},
         ]
 
 # チャットボットとやりとりする関数
