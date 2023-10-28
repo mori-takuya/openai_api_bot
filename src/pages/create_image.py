@@ -5,7 +5,7 @@ import streamlit as st
 openai.api_key = #st.secrets.OpenAIAPI.openai_api_key
 
 # 画像を生成するリクエストの送信
-def generate_image_with_dalle2(prompt):
+def dalle2_image(prompt):
   response = openai.Image.create(
     prompt= prompt,
     n=1,
@@ -17,5 +17,5 @@ def generate_image_with_dalle2(prompt):
 
 # 画像を表示する処理
 user_input = st.text_input("どのような画像を生成したいですか")
-image_url = generate_image_with_dalle2(user_input)
+image_url = dalle2_image(user_input)
 st.image(image_url, caption='画像キャプション')
