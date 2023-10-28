@@ -6,12 +6,12 @@ def main_page():
     st.sidebar.markdown("# Main page 🎈")
 
 def page2():
-    st.markdown("# Page 2 ❄️")
-    st.sidebar.markdown("# Page 2 ❄️")
+    st.markdown("# app ❄️")
+    st.sidebar.markdown("# app ❄️")
 
 page_names_to_funcs = {
     "Main Page": main_page,
-    "Page 2": app
+    "app": app
 }
 
 selected_page = st.sidebar.selectbox("Select a page", page_names_to_funcs.keys())
