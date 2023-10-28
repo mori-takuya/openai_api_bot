@@ -22,4 +22,4 @@ import matplotlib.image as mpimg
 
 img = mpimg.imread(image_url)
 user_input = st.text_input("メッセージを入力してください。", key="user_input", on_change=communicate)
-st.image(img,, caption='画像キャプション')
+st.image(img, caption='画像キャプション')
