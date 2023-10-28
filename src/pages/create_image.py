@@ -6,7 +6,7 @@ openai.api_key = st.secrets.OpenAIAPI.openai_api_key
 
 # 画像を生成するリクエストの送信
 response = openai.Image.create(
-  prompt="a",
+  prompt= user_input,
   n=1,
   size='{}x{}'.format(str(256), str(256))
 )
@@ -15,5 +15,5 @@ response = openai.Image.create(
 image_url = response['data'][0]['url']
 
 # 画像を表示する処理
-# user_input = st.text_input("メッセージを入力してください。", key="user_input", on_change=communicate)
+user_input = st.text_input("メッセージを入力してください。", key="user_input", on_change=communicate)
 st.image(image_url, caption='画像キャプション')
