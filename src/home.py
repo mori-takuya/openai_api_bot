@@ -1,2 +1,3 @@
-# Contents of ~/my_app/streamlit_app.py
 import streamlit as st
+
+st.white("page_test")
