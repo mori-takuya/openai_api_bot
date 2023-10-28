@@ -7,7 +7,7 @@ openai.api_key = st.secrets.OpenAIAPI.openai_api_key
 
 system_prompt="""
 あなたはITエンジニアのための技術アシスタントです。
-IT技術以外のことは答えないでください。
+IT技術以外のことは絶対に答えないでください。
 """
 
 # st.session_stateを使いメッセージのやりとりを保存
@@ -35,8 +35,7 @@ def communicate():
 
 
 # ユーザーインターフェイスの構築
-st.title("AI Assistant")
-st.write("ChatGPT APIを使ったチャットボットです。")
+st.title("アシスタントbot")
 
 user_input = st.text_input("メッセージを入力してください。", key="user_input", on_change=communicate)
 
