@@ -16,6 +16,6 @@ def generate_image_with_dalle2(prompt):
   return image_url
 
 # 画像を表示する処理
-user_input = st.text_input("メッセージを入力してください。", key="user_input", on_change=communicate)
+user_input = st.text_input("どのような画像を生成したいですか")
 image_url = generate_image_with_dalle2(""" user_input """)
 st.image(image_url, caption='画像キャプション')
