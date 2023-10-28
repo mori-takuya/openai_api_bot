@@ -5,7 +5,7 @@ def main_page():
     st.markdown("# Main page 🎈")
     st.sidebar.markdown("# Main page 🎈")
 
-def page2():
+def app():
     st.markdown("# app ❄️")
     st.sidebar.markdown("# app ❄️")
 
