@@ -35,7 +35,7 @@ def communicate():
 
 
 # ユーザーインターフェイスの構築
-st.title("アシスタントbot")
+st.title("ITアシスタントbot")
 
 user_input = st.text_input("メッセージを入力してください。", key="user_input", on_change=communicate)
 
