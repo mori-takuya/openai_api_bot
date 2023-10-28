@@ -4,12 +4,10 @@ import streamlit as st
 # OpenAI APIの設定
 openai.api_key = 'YOUR_API_KEY'
 
-prompt = """ image_url """
-
 # 画像を生成するリクエストの送信
 response = openai.Completion.create(
-  engine= "davinci",
-  prompt= prompt,
+  engine="davinci",
+  prompt="a",
   max_tokens=100,
   temperature=0.7
 )
@@ -24,4 +22,4 @@ import matplotlib.image as mpimg
 
 img = mpimg.imread(image_url)
 user_input = st.text_input("メッセージを入力してください。", key="user_input", on_change=communicate)
-st.image(img, caption='画像キャプション')
+st.image(img,, caption='画像キャプション')
