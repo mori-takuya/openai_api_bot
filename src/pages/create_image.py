@@ -4,10 +4,12 @@ import streamlit as st
 # OpenAI APIの設定
 openai.api_key = 'YOUR_API_KEY'
 
+prompt = """ image_url """
+
 # 画像を生成するリクエストの送信
 response = openai.Completion.create(
   engine= "davinci",
-  prompt= user_input,
+  prompt= prompt,
   max_tokens=100,
   temperature=0.7
 )
