@@ -3,3 +3,4 @@ openai
 streamlit-authenticator
 urllib.request
 urllib.error
+extra_streamlit_components
