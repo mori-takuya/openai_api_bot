@@ -1,5 +1,6 @@
 import streamlit as st
 import streamlit_authenticator as stauth
+import requests
 import yaml
 
 url = 'https://raw.githubusercontent.com/mori-takuya/openai_api_bot/main/src/config.yaml'
