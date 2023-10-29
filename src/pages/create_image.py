@@ -1,5 +1,12 @@
 import openai
 import streamlit as st
+import extra_streamlit_components as stx
+
+#ログインの確認
+value = stx.CookieManager().get(cookie='some_cookie_name')
+if value == None:
+    st.warning("**ログインしてください**")
+    st.stop()
 
 # OpenAI APIの設定
 openai.api_key = #st.secrets.OpenAIAPI.openai_api_key
