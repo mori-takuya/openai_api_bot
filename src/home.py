@@ -1,27 +1,29 @@
 import streamlit as st
 import streamlit_authenticator as stauth
+import yaml
 
-# ユーザ情報。引数
-names = st.secrets.login.names  # 
-usernames = st.secrets.login.usernames  # 入力フォームに入力された値と合致するか確認される
-passwords = st.secrets.login.passwords  # 入力フォームに入力された値と合致するか確認される
+with open('config/config.yaml') as file:
+    config = yaml.load(file, Loader=yaml.SafeLoader)
 
-# パスワードをハッシュ化。 リスト等、イテラブルなオブジェクトである必要がある
-hashed_passwords = stauth.Hasher(passwords).generate()
+authenticator = stauth.Authenticate(
+    config['credentials'],
+    config['cookie']['name'],
+    config['cookie']['key'],
+    config['cookie']['expiry_days'],
+    config['preauthorized'],
+)
 
-# cookie_expiry_daysでクッキーの有効期限を設定可能。認証情報の保持期間を設定でき値を0とするとアクセス毎に認証を要求する
-authenticator = stauth.Authenticate(names, usernames, hashed_passwords,'some_cookie_name', 'some_signature_key', cookie_expiry_days=30)
-
-# ログインメソッドで入力フォームを配置
 name, authentication_status, username = authenticator.login('Login', 'main')
 
-# 返り値、authenticaton_statusの状態で処理を場合分け
-if authentication_status:
-    # logoutメソッドでaurhenciationの値をNoneにする
+
+if 'authentication_status' not in st.session_state:
+    st.session_state['authentication_status'] = None
+
+if st.session_state["authentication_status"]:
     authenticator.logout('Logout', 'main')
-    st.write('Welcome *%s*' % (name))
-    st.title('Some content')
-elif authentication_status == False:
-    st.error('Username/password is incorrect')
-elif authentication_status == None:
-    st.warning('Please enter your username and password')
+    st.write(f'ログインに成功しました')
+		# ここにログイン後の処理を書く。
+elif st.session_state["authentication_status"] is False:
+    st.error('ユーザ名またはパスワードが間違っています')
+elif st.session_state["authentication_status"] is None:
+    st.warning('ユーザ名やパスワードを入力してください')
