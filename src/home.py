@@ -2,9 +2,13 @@ import streamlit as st
 import streamlit_authenticator as stauth
 
 # ユーザ情報。引数
-names = st.secrets.login.names  # 
-usernames = st.secrets.login.usernames  # 入力フォームに入力された値と合致するか確認される
-passwords = st.secrets.login.passwords  # 入力フォームに入力された値と合致するか確認される
+#names = st.secrets.login.names  # 
+#usernames = st.secrets.login.usernames  # 入力フォームに入力された値と合致するか確認される
+#passwords = st.secrets.login.passwords  # 入力フォームに入力された値と合致するか確認される
+names = ['John Smith', 'Rebecca Briggs']  # 
+usernames = ['jsmith', 'rbriggs']  # 入力フォームに入力された値と合致するか確認される
+passwords = ['123', '456']  # 入力フォームに入力された値と合致するか確認される
+
 
 # パスワードをハッシュ化。 リスト等、イテラブルなオブジェクトである必要がある
 hashed_passwords = stauth.Hasher(passwords).generate()
