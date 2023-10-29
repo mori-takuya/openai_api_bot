@@ -2,7 +2,7 @@ import streamlit as st
 import streamlit_authenticator as stauth
 import yaml
 
-with open('/mount/src/openai_api_bot/src/config/config.yaml') as file:
+with open('config.yaml') as file:
     config = yaml.load(file, Loader=yaml.SafeLoader)
 
 authenticator = stauth.Authenticate(
