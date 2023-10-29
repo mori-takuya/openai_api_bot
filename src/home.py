@@ -6,8 +6,7 @@ import yaml
 url = 'https://raw.githubusercontent.com/mori-takuya/openai_api_bot/main/src/config.yaml'
 response = requests.get(url)
 config_data = response.text
-with open(config_data) as file:
-    config = yaml.load(file, Loader=yaml.SafeLoader)
+config = yaml.load(config_data, Loader=yaml.SafeLoader)
 
 authenticator = stauth.Authenticate(
     config['credentials'],
