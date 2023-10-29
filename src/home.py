@@ -1,7 +1,7 @@
 import streamlit as st
 import streamlit_authenticator as stauth
 import yaml
-import urllib2
+import urllib.request, urllib.error
 
 url = 'https://raw.githubusercontent.com/mori-takuya/openai_api_bot/main/src/config.yaml'
 with urllib.request.urlopen(url) as file:
