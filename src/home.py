@@ -1,9 +1,10 @@
 import streamlit as st
 import streamlit_authenticator as stauth
 import yaml
+import urllib2
 
 url = 'https://raw.githubusercontent.com/mori-takuya/openai_api_bot/main/src/config.yaml'
-with open(url) as file:
+with urllib2.urlopen(url) as file:
     config = yaml.load(file, Loader=yaml.SafeLoader)
 	
 authenticator = stauth.Authenticate(
