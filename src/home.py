@@ -3,7 +3,7 @@ import streamlit_authenticator as stauth
 import yaml
 import urllib.request, urllib.error
 
-url = 'https://raw.githubusercontent.com/mori-takuya/openai_api_bot/main/src/config.yaml'
+url = 'https://raw.githubusercontent.com/mori-takuya/openai_api_bot/main/src/config/config.yaml'
 with urllib.request.urlopen(url) as file:
     config = yaml.load(file, Loader=yaml.SafeLoader)
 	
