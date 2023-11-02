@@ -9,7 +9,7 @@ if value == None:
     st.stop()
 
 # OpenAI APIの設定
-openai.api_key = #st.secrets.OpenAIAPI.openai_api_key
+openai.api_key = st.secrets.OpenAIAPI.openai_api_key
 
 # 画像を生成するリクエストの送信
 def dalle2_image(prompt):
