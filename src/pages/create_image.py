@@ -25,4 +25,4 @@ def dalle2_image(prompt):
 # 画像を表示する処理
 user_input = st.text_input("どのような画像を生成したいですか")
 image_url = dalle2_image(user_input)
-st.image(image_url, caption='画像キャプション')
+st.image(image_url, caption='生成画像')
