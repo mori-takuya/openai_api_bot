@@ -44,7 +44,7 @@ def communicate():
         messages=messages_gpt4_test
     )  
 
-    bot_message_test = response["choices"][0]["messages_gpt4_test"]
+    bot_message_test = response["choices"][0]["messages"]
     messages_gpt4_test.append(bot_message_test)
 
     st.session_state["user_input"] = ""  # 入力欄を消去
