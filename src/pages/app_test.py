@@ -23,7 +23,7 @@ def communicate():
     user_message_test = {"role": "user", "content": st.session_state["user_input"]}
     messages_test.append(user_message_test)
 
-    response = openai.ChatCompletion.create(
+    response = openai.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=messages_test
     )  
