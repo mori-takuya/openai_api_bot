@@ -11,7 +11,7 @@ if value == None:
 
 # Streamlit Community Cloudの「Secrets」からOpenAI API keyを取得
 client = OpenAI(
-  api_key=st.secrets.OpenAIAPI.openai_api_key
+  api_key=st.secrets.OpenAIAPI.openai_api_key,
 )
 
 # st.session_stateを使いメッセージのやりとりを保存
