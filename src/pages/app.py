@@ -48,7 +48,7 @@ if st.session_state["messages"]:
 
     for message in reversed(messages[1:]):  # 直近のメッセージを上に
         speaker = "自分"
-        print("TEST:" + message)
+        print("TEST:" + message[0])
         if message["role"]=="assistant":
             speaker="AI"
 
