@@ -45,11 +45,12 @@ user_input = st.text_input("メッセージを入力してください。", key=
 
 if st.session_state["messages"]:
     messages = st.session_state["messages"]
+    print(messages)
 
     for message in reversed(messages[1:]):  # 直近のメッセージを上に
         speaker = "自分"
-        if message.dict=="assistant":
+        if message["role"]=="assistant":
             speaker="AI"
 
-        st.write(speaker + ": " + message.content)
+        st.write(speaker + ": " + message["content"])
         st.write("-----------------------------------------------------------------")
