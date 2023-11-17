@@ -39,7 +39,7 @@ def communicate():
     user_message_test = {"role": "user", "content": st.session_state["user_input"]}
     messages_gpt4_test.append(user_message_test)
 
-    response = openai.ChatCompletion.create(
+    response = openai.chat.completions.create(
         model="gpt-4-1106-preview",
         messages=messages_gpt4_test
     )  
