@@ -1,6 +1,6 @@
 
 import streamlit as st
-import openai
+from openai import OpenAI
 import extra_streamlit_components as stx
 
 #ログインの確認
