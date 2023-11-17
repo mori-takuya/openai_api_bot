@@ -29,7 +29,7 @@ def communicate():
 
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
-        messages=messages
+        messages=messages,
     )  
 
     bot_message = response.choices[0].messages
