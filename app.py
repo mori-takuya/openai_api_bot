@@ -25,7 +25,7 @@ def communicate():
         messages=messages
     )
 
-    bot_message = response.choices[0].message["content"]
+    bot_message = response.choices[0].message.content
     messages.append({"role": "assistant", "content": bot_message})
 
     st.session_state.user_input = ""  # 入力欄を消去
@@ -40,6 +40,6 @@ if st.session_state["messages"]:
     messages = st.session_state["messages"]
 
     for message in reversed(messages[1:]):  # 直近のメッセージを上に
-        speaker = "自分" if message["role"] == "user" else "AI"
-        st.write(f"{speaker}: {message['content']}")
+        speaker = "自分" if message.role == "user" else "AI"
+        st.write(f"{speaker}: {message.content}")
         st.write("-----------------------------------------------------------------")
