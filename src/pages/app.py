@@ -47,6 +47,6 @@ if st.session_state["messages"]:
     messages = st.session_state["messages"]
 
     for message in reversed(messages[1:]):  # 直近のメッセージを上に
-        st.write("自分: " + user_input)
+        #st.write("自分: " + user_input)
         st.write("AI: " + message.content)
         st.write("-----------------------------------------------------------------")
