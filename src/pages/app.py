@@ -34,7 +34,7 @@ def communicate():
     bot_message = response.choices[0].message
     messages.append(bot_message)
 
-    #st.session_state["user_input"] = ""  # 入力欄を消去
+    st.session_state["user_input"] = ""  # 入力欄を消去
 
 
 # ユーザーインターフェイスの構築
@@ -45,8 +45,5 @@ user_input = st.chat_input("メッセージを入力してください。", key=
 
 if st.session_state["messages"]:
     messages = st.session_state["messages"]
-
-    for message in messages[1:]:
-        #st.write("自分: " + user_input)
-        st.write("AI: " + message.content)
-        st.write("-----------------------------------------------------------------")
+    st.write("AI: " + messages.content)
+    st.write("-----------------------------------------------------------------")
