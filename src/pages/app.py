@@ -51,6 +51,4 @@ if st.session_state["messages"]:
         if message.role=="assistant" :
             speaker="AI"
         st.write(speaker + ": " + message.content)
-        st.write(speaker + ": " + message.role)
-        st.write(speaker + ": " + message)
         st.write("-----------------------------------------------------------------")
