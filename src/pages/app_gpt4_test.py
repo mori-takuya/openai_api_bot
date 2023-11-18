@@ -10,7 +10,7 @@ if value == None:
     st.stop()
 
 # Streamlit Community Cloudの「Secrets」からOpenAI API keyを取得
-openai.api_key = st.secrets.OpenAIAPI.openai_api_key
+
 
 # st.session_stateを使いメッセージのやりとりを保存
 if "messages" not in st.session_state:
@@ -19,7 +19,7 @@ if "messages" not in st.session_state:
         ]
 
 # Streamlit Community Cloudの「Secrets」からOpenAI API keyを取得
-openai.api_key = st.secrets.OpenAIAPI.openai_api_key
+
 
 system_prompt="""
 あなたはITエンジニアのための技術アシスタントです。
