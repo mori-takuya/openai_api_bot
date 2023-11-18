@@ -41,7 +41,7 @@ def communicate():
 st.title("AI Assistant")
 st.write("ChatGPT APIを使ったチャットボットです。")
 
-user_input = st.text_input("メッセージを入力してください。", key="user_input", on_change=communicate)
+user_input = st.chat_input("メッセージを入力してください。", key="user_input", on_submit=communicate)
 
 if st.session_state["messages"]:
     messages = st.session_state["messages"]
