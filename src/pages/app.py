@@ -46,7 +46,7 @@ user_input = st.chat_input("メッセージを入力してください。", key=
 if st.session_state["messages"]:
     messages = st.session_state["messages"]
 
-    for message　in messages[1:]:
+    for message in messages[1:]:
         #st.write("自分: " + user_input)
         st.write("AI: " + message.content)
         st.write("-----------------------------------------------------------------")
